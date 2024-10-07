@@ -1,7 +1,6 @@
 export default function AddGoal() {
   return (
     <>
-      <button>Add new goal</button>
       <form className='form'>
         <label>Title</label>
         <input type='text' />
