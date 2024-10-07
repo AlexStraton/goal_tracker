@@ -40,20 +40,24 @@ function App() {
       priority: "High",
     },
   ]);
+  const [priority, setPriority] = useState("Low");
 
   return (
     <>
       <h1> My goals</h1>
-      <button onClick={() => setShowAddGoal(!showAddGoal)}>Add new goal</button>
+      <button onClick={() => setShowAddGoal(!showAddGoal)}>
+        {showAddGoal ? "cancel" : "Add new goal"}
+      </button>
       {showAddGoal ? (
         <AddGoal
           goals={goals}
           setGoals={setGoals}
           newGoal={newGoal}
           setnewGoal={setnewGoal}
+          setPriority={setPriority}
         />
       ) : null}
-      <Goals goals={goals} setnewGoal={setnewGoal} />
+      <Goals goals={goals} setnewGoal={setnewGoal} setPriority={setPriority} />
     </>
   );
 }

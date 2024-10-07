@@ -1,4 +1,12 @@
-export default function AddGoal({ newGoal, setnewGoal, goals, setGoals }) {
+import Priority from "./Priority";
+
+export default function AddGoal({
+  newGoal,
+  setnewGoal,
+  goals,
+  setGoals,
+  setPriority,
+}) {
   function handleChange(e) {
     const { name, value } = e.target;
     setnewGoal({ ...newGoal, [name]: value });
@@ -53,13 +61,8 @@ export default function AddGoal({ newGoal, setnewGoal, goals, setGoals }) {
           type='text'
           onChange={handleChange}
         />
-        <label>Priority</label>
-        <input
-          name='priority'
-          value={newGoal.priority}
-          type='text'
-          onChange={handleChange}
-        />
+        <Priority setPriority={setPriority} />
+
         <button>Add</button>
       </form>
     </>

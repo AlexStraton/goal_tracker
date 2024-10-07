@@ -1,3 +1,5 @@
+import Priority from "./Priority";
+
 export default function Goals({ goals }) {
   return (
     <div>
@@ -8,7 +10,7 @@ export default function Goals({ goals }) {
             <h2>{goal.description}</h2>
             <h3>Status: {goal.completed ? "Completed" : "In Progress"}</h3>
             <h3>Progress: {goal.progress} %</h3>
-            <h3>Priority: {goal.priority}</h3>
+            <Priority />
           </div>
         );
       })}
